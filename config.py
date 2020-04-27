@@ -3,7 +3,7 @@ import os
 
 class Config:
    
-    NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
+    NEWS_API_KEY = '4d2a9b72117b4ae0a28523b8a5a092e2'
 
 class ProdConfig(Config):
  
