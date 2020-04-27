@@ -1,0 +1,50 @@
+{% macro display_articles(articles) %}
+<div class="container-fluid articles">
+    <div>
+        <br><br>
+    </div>
+    <div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-white txt">{{source}} Articles</h1>
+        </div>
+    </div>
+    <div class="card-columns">
+        {% for article in articles %}
+        <div class="card">
+            <img src="{{article.urlToImage}}" alt="" class="card-img-top">
+            <div class="card-body">
+                <p>{{article.description}}</p>
+                <p><br>{{ article.author}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
+
+{% macro display_sources(sources) %}
+<div class="container-fluid sources">
+    <div>
+        <br><br>
+    </div>
+    <div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-white txt">News sources</h1>
+        </div>
+    </div>
+    <div class="card-columns">
+        {% for source in sources %}
+        <div class="card">
+            <div class="card-header ch" style="opacity:1;">
+                <a href="/article/{{source.id}}" class="htext" style="color:#ff5722; font-size:18px;"><h1 class="text-center" name = >{{source.name}}</h1></a>
+            </div>
+            <div class="card-body">
+                <p class="desc">{{source.description}}</p>
+                <p class="cat"><br> <span class="category">Category: </span> {{ source.category }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
