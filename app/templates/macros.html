@@ -23,18 +23,12 @@
 {% endmacro %}
 
 {% macro display_sources(sources) %}
-<div class="container-fluid sources">
-    <div>
-        <br><br>
-    </div>
-    <div class="jumbotron hjumbo">
-        <div class="overlay">
-            <h1 class="text-white txt">News sources</h1>
-        </div>
-    </div>
-    <div class="card-columns">
+<div class="container-fluid">
+    <div class="row"></div>
+   
+    <div class="card-columns ">
         {% for source in sources %}
-        <div class="card">
+        <div class="card col-md-4 ">
             <div class="card-header ch" style="opacity:1;">
                 <a href="/article/{{source.id}}" class="htext" style="color:#ff5722; font-size:18px;"><h1 class="text-center" name = >{{source.name}}</h1></a>
             </div>
@@ -45,6 +39,7 @@
 
         </div>
         {% endfor %}
+    </div>
     </div>
 </div>
 {% endmacro %}
