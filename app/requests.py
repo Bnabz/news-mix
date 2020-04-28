@@ -28,7 +28,7 @@ def get_sources():
     return sources
 
 
-def get_article_by_source():
+def get_article_by_source(id):
     source_article = []
     source_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(id,api_key)
     response = requests.get(source_articles_url)

@@ -1,15 +1,21 @@
-{% macro display_source_articles(source_articles) %}
-<div class="container-fluide">
-    
+{% macro display_articles(articles) %}
+<div class="container-fluid articles">
+    <div>
+        <br><br>
+    </div>
+    <div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-white txt">{{source}} Articles</h1>
+        </div>
+    </div>
     <div class="card-columns">
-        {% for article in source_articles %}
+        {% for article in articles %}
         <div class="card">
             <img src="{{article.urlToImage}}" alt="" class="card-img-top">
             <div class="card-body">
                 <p>{{article.description}}</p>
-                <p>{{ article.publishedAt}}</p>
+                <p><br>{{ article.author}}</p>
             </div>
-            <p>{{ article.url }}</p>
         </div>
         {% endfor %}
     </div>
