@@ -9,7 +9,17 @@ def index():
         return render_template('index.html', sources=sources)
 
 
-@main.route('/articles')
-def view_articles():
+@main.route('/technology')
+def tech_articles():
     articles = get_articles("tech")
+    return render_template('articles.html', articles=articles)
+
+@main.route('/business')
+def biz_articles():
+    articles = get_articles("business")
+    return render_template('articles.html', articles=articles)
+
+@main.route('/business')
+def viewb_articles():
+    articles = get_articles("entertainment")
     return render_template('articles.html', articles=articles)

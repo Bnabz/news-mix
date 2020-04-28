@@ -1,0 +1,10 @@
+.card-column {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.navbar{
+  height: 350%;
+}
+
+  

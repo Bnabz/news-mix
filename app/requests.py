@@ -37,6 +37,9 @@ def get_articles(article):
             for data in response.json()['articles']:
                 articles.append(data)
             return articles
+
+
+
 # def get_sources():
 #     sources = newsapi.get_sources()
 #     print("hello")
