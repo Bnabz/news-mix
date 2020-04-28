@@ -8,8 +8,9 @@
         <div class="card col-md-4 ">
             <img src="{{article.urlToImage}}" alt="" class=" card-img-top img-responsive">
             <div class="card-footer">
-                <p style="color:#232e4a;font-size:130%;">{{article.title}}</p>
-                <a href="{{article.url}}" class="htext" style="color:blue; font-size:18px;"><p class="text-center" style="color:blue;font-size:140%;" >{{article.source.name}}</p></a>
+                <p style="color:#232e4a;font-size:130%;"><b>{{article.title}}</b></p>
+                <p style="color:#232e4a;font-size:130%;">Date published: {{article.publishedAt[:10]}}</p>
+                <a href="{{article.url}}" class="htext" style="color:#232e4a; font-size:18px;"><p class="text-center" style="color:blue;font-size:140%;" >{{article.source.name}}</p></a>
             </div>
         </div>
         {% endif %}
@@ -32,7 +33,7 @@
                 </div>
                 <div class="card-body">
                     <p class="desc">{{source.description}}</p>
-                    <p class="cat"><br> <span class="category">Category: </span> {{ source.category }}</p>
+                    <b> <p class="cat"><br> <span class="category">Category: </span> {{ source.category }}</p></b>
                 </div>
 
             </div>

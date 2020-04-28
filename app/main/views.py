@@ -19,7 +19,7 @@ def biz_articles():
     articles = get_articles("business")
     return render_template('articles.html', articles=articles)
 
-@main.route('/business')
+@main.route('/entertainment')
 def viewb_articles():
     articles = get_articles("entertainment")
     return render_template('articles.html', articles=articles)
