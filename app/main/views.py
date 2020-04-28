@@ -7,3 +7,10 @@ def index():
     sources = get_sources()
     if sources:
         return render_template('index.html', sources=sources)
+
+
+@main.route('/article/<id>')
+def source_article(id):
+    source_articles = news_request_handler.get_article_by_source(id)
+    source = id
+    return render_template('articles_display.html', source_articles=source_articles, source=source)
