@@ -17,20 +17,6 @@ def configure_request(app):
 
 newsapi = NewsApiClient(api_key='4d2a9b72117b4ae0a28523b8a5a092e2')
 
-# def get_sources():
-#     get_news_sources_url = sources_url.format(api_key)
-
-
-#     with urllib.request.urlopen(get_news_sources_url) as url:
-#         get_sources_data = url.read()
-#         get_sources_response = json.loads(get_sources_data)
-
-#         sources = None
-
-#         if get_sources_response['sources']:
-#             sources = get_sources_response['sources']
-            
-#     return sources
 
 def get_sources():
     sources = []
@@ -41,6 +27,15 @@ def get_sources():
             sources.append(data)
     return sources
 
+
+def get_article_by_source():
+    source_article = []
+    source_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(id,api_key)
+    response = requests.get(source_articles_url)
+    if response.status_code == 200:
+        for data in response.json()['articles']:
+            source_article.append(data)
+    return source_article
 # def get_sources():
 #     sources = newsapi.get_sources()
 #     print("hello")
